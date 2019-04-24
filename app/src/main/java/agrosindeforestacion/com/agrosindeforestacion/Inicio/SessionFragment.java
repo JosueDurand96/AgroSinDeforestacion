@@ -1,4 +1,3 @@
-
 package agrosindeforestacion.com.agrosindeforestacion.Inicio;
 
 import android.content.Intent;
@@ -20,23 +19,28 @@ import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
 
 
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
+
+import agrosindeforestacion.com.agrosindeforestacion.Menu.MenuPrincipal;
 import agrosindeforestacion.com.agrosindeforestacion.R;
+import agrosindeforestacion.com.agrosindeforestacion.model.nthc_persona;
 
 
 public class SessionFragment extends Fragment implements Response.Listener<JSONObject>,Response.ErrorListener {
 
     EditText etUsuario;
     EditText etClave;
-    static EditText etNombre;
+
     Button btnSesion,btnRegistrar;
 
     RequestQueue rq;
     JsonRequest jrq;
-    public static final String id="id";
+    public static final String id="";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -96,19 +100,20 @@ public class SessionFragment extends Fragment implements Response.Listener<JSONO
     public  static String Coool;
     public static String getMyVariablePict() {
 
-        Coool= etNombre.getText().toString();
+        //Coool= etNombre.getText().toString();
         return Coool;
     }
 
     @Override
     public void onErrorResponse(VolleyError error) {
+
         Toast.makeText(getContext(), "No se encontró al Usuario", Toast.LENGTH_SHORT).show();
 
     }
 
     @Override
     public void onResponse(JSONObject response) {
-       // Cliente cliente = new Cliente();
+        nthc_persona usuario = new nthc_persona();
         Toast.makeText(getContext(), "Bienvenido", Toast.LENGTH_SHORT).show();
 
         JSONArray jsonArray = response.optJSONArray("datos");
@@ -116,22 +121,22 @@ public class SessionFragment extends Fragment implements Response.Listener<JSONO
 
         try {
             jsonObject =  jsonArray.getJSONObject(0);
-//            cliente.setIdcliente(jsonObject.optString("idcliente"));
-//            cliente.setCelular(jsonObject.optString("celular"));
-//            cliente.setPassword(jsonObject.optString("password"));
+            usuario.setId_nthc_persona(jsonObject.optString("id_nthc_persona"));
+            usuario.setCorreo(jsonObject.optString("correo"));
+            usuario.setPassword(jsonObject.optString("password"));
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
-//        Intent i = new Intent(getContext(),MenuPrincipal.class);
-//        i.putExtra(id,cliente.getIdcliente() );
-//        startActivity(i);
+        Intent i = new Intent(getContext(),MenuPrincipal.class);
+        i.putExtra(id,usuario.getId_nthc_persona() );
+        startActivity(i);
 
     }
     private void iniciarSesion() {
-        String url ="http://192.168.1.141/natu/login.php?nombre="+
-                "&correoc="+etUsuario.getText().toString()+
-                "&password="+etClave.getText().toString();
+        Toast.makeText(getContext(), ""+etUsuario.getText().toString(), Toast.LENGTH_SHORT).show();
+
+        String url ="http://192.168.1.141/natu/login.php?correo=josue&password=1234";
         jrq = new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         rq.add(jrq);
 
