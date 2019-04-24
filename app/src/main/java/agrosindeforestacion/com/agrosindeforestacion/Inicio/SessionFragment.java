@@ -1,6 +1,7 @@
 
-package agrosindeforestacion.com.agrosindeforestacion;
+package agrosindeforestacion.com.agrosindeforestacion.Inicio;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -23,6 +24,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import agrosindeforestacion.com.agrosindeforestacion.R;
+
 
 public class SessionFragment extends Fragment implements Response.Listener<JSONObject>,Response.ErrorListener {
 
@@ -40,9 +43,9 @@ public class SessionFragment extends Fragment implements Response.Listener<JSONO
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_session, container, false);
         View vista = inflater.inflate(R.layout.fragment_session,container,false);
-        etUsuario = (EditText)vista.findViewById(R.id.txtcelular1);
-        etClave = (EditText)vista.findViewById(R.id.txtpass1);
 
+        etClave = (EditText)vista.findViewById(R.id.txtpass);
+        etUsuario = (EditText)vista.findViewById(R.id.txtcorreo);
 
         btnSesion =(Button)vista.findViewById(R.id.btnIngresar);
         btnRegistrar=(Button)vista.findViewById(R.id.btnRegistrar);
@@ -50,8 +53,8 @@ public class SessionFragment extends Fragment implements Response.Listener<JSONO
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //  Intent entrar = new Intent(getContext(),Registrar.class);
-              //  startActivity(entrar);
+                Intent entrar = new Intent(getContext(),Registrar.class);
+                startActivity(entrar);
             }
         });
         rq = Volley.newRequestQueue(getContext());
@@ -77,12 +80,9 @@ public class SessionFragment extends Fragment implements Response.Listener<JSONO
     private boolean validate() {
 
         boolean valid = true;
-        if (etNombre.getText().toString().isEmpty() || etNombre.length() > 32) {
-            etNombre.setError("Ingrese la empresa");
-            valid = false;
-        }
+
         if (etUsuario.getText().toString().isEmpty() || etUsuario.length() > 32) {
-            etUsuario.setError("Ingrese su celular");
+            etUsuario.setError("Ingrese su correo");
             valid = false;
         }
         if (etClave.getText().toString().isEmpty() || etClave.length() > 4) {
@@ -129,8 +129,8 @@ public class SessionFragment extends Fragment implements Response.Listener<JSONO
 
     }
     private void iniciarSesion() {
-        String url ="http://www.capacitasoft.com/site/Cliente/login3.php?nombre="+etNombre.getText().toString()+
-                "&celular="+etUsuario.getText().toString()+
+        String url ="http://192.168.1.141/natu/login.php?nombre="+
+                "&correoc="+etUsuario.getText().toString()+
                 "&password="+etClave.getText().toString();
         jrq = new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         rq.add(jrq);

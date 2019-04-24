@@ -1,9 +1,11 @@
-package agrosindeforestacion.com.agrosindeforestacion;
+package agrosindeforestacion.com.agrosindeforestacion.Inicio;
 
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import agrosindeforestacion.com.agrosindeforestacion.R;
 
 public class MainActivity extends AppCompatActivity {
     private final int DURACION_SPLASH = 3000;
