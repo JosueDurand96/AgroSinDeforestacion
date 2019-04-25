@@ -134,9 +134,11 @@ public class SessionFragment extends Fragment implements Response.Listener<JSONO
 
     }
     private void iniciarSesion() {
-        Toast.makeText(getContext(), ""+etUsuario.getText().toString(), Toast.LENGTH_SHORT).show();
 
-        String url ="http://192.168.1.141/natu/login.php?correo=josue&password=1234";
+        String url ="http://natu.vrammdev.com/login.php?correo="
+
+                +etUsuario.getText().toString()+
+                "&password=" +etClave.getText().toString();
         jrq = new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         rq.add(jrq);
 
