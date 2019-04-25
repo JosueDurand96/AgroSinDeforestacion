@@ -3,23 +3,66 @@ package agrosindeforestacion.com.agrosindeforestacion.Menu;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import android.view.MenuItem;
 import android.widget.Toast;
 
-import agrosindeforestacion.com.agrosindeforestacion.Inicio.MainActivity;
-import agrosindeforestacion.com.agrosindeforestacion.R;
 
+
+import agrosindeforestacion.com.agrosindeforestacion.Inicio.MainActivity;
+import agrosindeforestacion.com.agrosindeforestacion.Inicio.SessionFragment;
+import agrosindeforestacion.com.agrosindeforestacion.R;
+import agrosindeforestacion.com.agrosindeforestacion.fragment.AboutFragment;
+import agrosindeforestacion.com.agrosindeforestacion.fragment.HomeFragment;
+import android.support.v7.widget.Toolbar;
 public class MenuPrincipal extends AppCompatActivity {
+    Toolbar toolbar;
+    BottomNavigationView bottomNavigationView;
     private Session session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar1);
+
+
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation_bottom);
+        bottomNavigationView.getMenu().getItem(1).setChecked(true);
+        changeFragment(new HomeFragment());
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.menu_home:
+                        changeFragment(new HomeFragment());
+                        break;
+                    case R.id.menu_settings:
+                        changeFragment(new AboutFragment());
+                        break;
+                    default:
+                        changeFragment(new HomeFragment());
+                }
+                return true;
+            }
+        });
     }
 
+
+
+    private void changeFragment(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.contentFragment, fragment)
+                .commit();
+    }
     private boolean doubleBackToExitPressedOnce;
     private Handler mHandler = new Handler();
 
@@ -31,8 +74,7 @@ public class MenuPrincipal extends AppCompatActivity {
     };
 
     @Override
-    protected void onDestroy()
-    {
+    protected void onDestroy() {
         super.onDestroy();
 
         if (mHandler != null) { mHandler.removeCallbacks(mRunnable); }
@@ -67,28 +109,7 @@ public class MenuPrincipal extends AppCompatActivity {
 
         mHandler.postDelayed(mRunnable, 2000);
     }
-//    @Override
-//    public void onBackPressed() {
-//      //  DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        builder.setMessage("¿Desea salir de la App?");
-//        builder.setTitle("Alerta!");
-//        builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                cerrandoSesion();
-//            }
-//        });
-//        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                dialog.cancel();
-//            }
-//        });
-//        AlertDialog dialog = builder.create();
-//        dialog.show();
-//
-//    }
+
 
     public void cerrandoSesion(){
         session = new Session(this);
