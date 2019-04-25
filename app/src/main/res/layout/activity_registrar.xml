@@ -1,9 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo4"
     tools:context=".Inicio.Registrar">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="539dp"
+        android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+
+            <TextView
+                android:id="@+id/lblTitulo"
+                android:layout_width="315dp"
+                android:layout_height="wrap_content"
+                android:text="      REGISTRAR"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@color/colorAccent"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="93dp"
+                tools:layout_editor_absoluteY="0dp" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/txtnombresUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView3"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="Nombre de la empresa"
+            android:inputType="textPersonName"
+            android:text="Avansys"
+
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtcorreoUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView3"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="Nombres y Apellidos"
+            android:inputType="textPersonName"
+            android:maxLength="50"
+
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtdniUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/txtnombre"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:hint="Celular"
+            android:inputType="phone"
+            android:maxLength="9"
+
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtpassUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:accessibilityLiveRegion="@android:integer/status_bar_notification_info_maxnum"
+            android:duplicateParentState="true"
+            android:ems="10"
+            android:hint="Contraseña"
+            android:inputType="numberPassword"
+            android:maxLength="4"
+
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtapellidoPaterno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/txtpassword"
+            android:accessibilityTraversalAfter="@+id/txtcorreo2"
+            android:ems="10"
+            android:hint="Correo"
+            android:inputType="textEmailAddress"
+            android:maxLength="50"
+
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/txtapellidoMaterno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/txtpassword"
+            android:accessibilityTraversalAfter="@+id/txtcorreo2"
+            android:ems="10"
+            android:hint="Correo"
+            android:inputType="textEmailAddress"
+            android:maxLength="50"
+
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtPredioUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/txtpassword"
+            android:accessibilityTraversalAfter="@+id/txtcorreo2"
+            android:ems="10"
+            android:hint="Correo"
+            android:inputType="textEmailAddress"
+            android:maxLength="50"
+
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnRegistrar3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/checkBox"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/checkBox"
+            android:layout_marginBottom="17dp"
+
+            android:text="REGISTRAR"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>
