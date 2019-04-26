@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,10 +16,11 @@ import android.widget.Toast;
 
 
 import agrosindeforestacion.com.agrosindeforestacion.Inicio.MainActivity;
-import agrosindeforestacion.com.agrosindeforestacion.Inicio.SessionFragment;
+import agrosindeforestacion.com.agrosindeforestacion.MapsActivity;
 import agrosindeforestacion.com.agrosindeforestacion.R;
 import agrosindeforestacion.com.agrosindeforestacion.fragment.AboutFragment;
 import agrosindeforestacion.com.agrosindeforestacion.fragment.HomeFragment;
+
 import android.support.v7.widget.Toolbar;
 public class MenuPrincipal extends AppCompatActivity {
     Toolbar toolbar;
@@ -43,7 +43,9 @@ public class MenuPrincipal extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.menu_home:
-                        changeFragment(new HomeFragment());
+                        Intent i = new Intent(getApplicationContext(),MapsActivity.class);
+                        startActivity(i);
+                        //changeFragment(new HomeFragment());
                         break;
                     case R.id.menu_settings:
                         changeFragment(new AboutFragment());
