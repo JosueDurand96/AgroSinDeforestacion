@@ -43,9 +43,7 @@ public class MenuPrincipal extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.menu_home:
-                        Intent i = new Intent(getApplicationContext(),MapsActivity.class);
-                        startActivity(i);
-                        //changeFragment(new HomeFragment());
+                        changeFragment(new HomeFragment());
                         break;
                     case R.id.menu_settings:
                         changeFragment(new AboutFragment());
