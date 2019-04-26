@@ -9,17 +9,13 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import android.view.MenuItem;
 import android.widget.Toast;
-
-
-
 import agrosindeforestacion.com.agrosindeforestacion.Inicio.MainActivity;
-import agrosindeforestacion.com.agrosindeforestacion.MapsActivity;
 import agrosindeforestacion.com.agrosindeforestacion.R;
 import agrosindeforestacion.com.agrosindeforestacion.fragment.AboutFragment;
 import agrosindeforestacion.com.agrosindeforestacion.fragment.HomeFragment;
+import agrosindeforestacion.com.agrosindeforestacion.fragment.SincronizarFragment;
 
 import android.support.v7.widget.Toolbar;
 public class MenuPrincipal extends AppCompatActivity {
@@ -30,14 +26,10 @@ public class MenuPrincipal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
-
         toolbar = (Toolbar) findViewById(R.id.toolbar1);
-
-
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation_bottom);
         bottomNavigationView.getMenu().getItem(1).setChecked(true);
-        changeFragment(new HomeFragment());
-
+        changeFragment(new AboutFragment());
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -49,7 +41,7 @@ public class MenuPrincipal extends AppCompatActivity {
                         changeFragment(new AboutFragment());
                         break;
                     default:
-                        changeFragment(new HomeFragment());
+                        changeFragment(new SincronizarFragment());
                 }
                 return true;
             }
