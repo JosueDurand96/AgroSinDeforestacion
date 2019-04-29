@@ -14,10 +14,10 @@ import agrosindeforestacion.com.agrosindeforestacion.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AboutFragment extends Fragment {
+public class MapasFragment extends Fragment {
 
 
-    public AboutFragment() {
+    public MapasFragment() {
         // Required empty public constructor
     }
     private GoogleMap mMap;

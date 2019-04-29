@@ -13,7 +13,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 import agrosindeforestacion.com.agrosindeforestacion.Inicio.MainActivity;
 import agrosindeforestacion.com.agrosindeforestacion.R;
-import agrosindeforestacion.com.agrosindeforestacion.fragment.AboutFragment;
+import agrosindeforestacion.com.agrosindeforestacion.fragment.MapasFragment;
 import agrosindeforestacion.com.agrosindeforestacion.fragment.HomeFragment;
 import agrosindeforestacion.com.agrosindeforestacion.fragment.SincronizarFragment;
 
@@ -29,16 +29,16 @@ public class MenuPrincipal extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar1);
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation_bottom);
         bottomNavigationView.getMenu().getItem(1).setChecked(true);
-        changeFragment(new AboutFragment());
+        changeFragment(new MapasFragment());
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.menu_home:
-                        changeFragment(new HomeFragment());
+                        changeFragment(new MapasFragment());
                         break;
                     case R.id.menu_settings:
-                        changeFragment(new AboutFragment());
+                        changeFragment(new HomeFragment());
                         break;
                     default:
                         changeFragment(new SincronizarFragment());
