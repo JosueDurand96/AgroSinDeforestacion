@@ -1,12 +1,14 @@
 package agrosindeforestacion.com.agrosindeforestacion.fragment;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.maps.GoogleMap;
+
 import agrosindeforestacion.com.agrosindeforestacion.R;
+
 
 
 public class HomeFragment extends Fragment {
