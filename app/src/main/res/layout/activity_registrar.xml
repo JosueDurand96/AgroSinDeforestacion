@@ -9,184 +9,184 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="539dp"
-        android:orientation="vertical">
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="46dp"
-            android:gravity="center">
+            android:layout_height="539dp"
+            android:orientation="vertical">
 
-            <android.support.constraint.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_height="46dp"
+                android:gravity="center">
 
-                <ImageView
-                    android:id="@+id/imageView9"
-                    android:layout_width="67dp"
-                    android:layout_height="44dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_weight="1"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0"
-                    app:srcCompat="@drawable/ic_arrow_back_black_24dp"
-                    tools:layout_editor_absoluteX="1dp" />
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
 
-                <TextView
-                    android:id="@+id/lblTitulo"
-                    android:layout_width="315dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="      REGISTRAR"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView9"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
-            </android.support.constraint.ConstraintLayout>
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="67dp"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0"
+                        app:srcCompat="@drawable/ic_arrow_back_black_24dp"
+                        tools:layout_editor_absoluteX="1dp" />
+
+                    <TextView
+                        android:id="@+id/lblTitulo"
+                        android:layout_width="315dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="      REGISTRAR"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageView9"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+                </android.support.constraint.ConstraintLayout>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/txtnombresUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView3"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="30dp"
+                android:ems="10"
+                android:hint="Nombres"
+                android:inputType="textPersonName"
+
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtapellidoPaterno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtpassword"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:accessibilityTraversalAfter="@+id/txtcorreo2"
+                android:ems="10"
+                android:hint="Apellido Paterno"
+                android:inputType="textEmailAddress"
+                android:maxLength="50"
+
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtapellidoMaterno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtpassword"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:accessibilityTraversalAfter="@+id/txtcorreo2"
+                android:ems="10"
+                android:hint="Apellido Materno"
+                android:inputType="textEmailAddress"
+                android:maxLength="50"
+
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtdniUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtnombre"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+
+                android:ems="10"
+                android:hint="Dni"
+                android:inputType="phone"
+                android:maxLength="9"
+
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtcorreoUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView3"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+
+                android:ems="10"
+                android:hint="Correo"
+                android:inputType="textPersonName"
+                android:maxLength="50"
+
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtpassUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:accessibilityLiveRegion="@android:integer/status_bar_notification_info_maxnum"
+                android:duplicateParentState="true"
+                android:ems="10"
+                android:hint="Contraseña"
+                android:inputType="numberPassword"
+                android:maxLength="4"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtPredioUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtpassword"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:accessibilityTraversalAfter="@+id/txtcorreo2"
+                android:ems="10"
+                android:hint="Predio"
+                android:inputType="textEmailAddress"
+                android:maxLength="50"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnRegistrar3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/checkBox"
+                android:layout_alignParentBottom="true"
+                android:layout_alignRight="@+id/checkBox"
+                android:layout_marginBottom="17dp"
+                android:text="REGISTRAR"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
-
-        <EditText
-            android:id="@+id/txtnombresUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView3"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="30dp"
-            android:ems="10"
-            android:hint="Nombres"
-            android:inputType="textPersonName"
-
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/txtapellidoPaterno"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtpassword"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:accessibilityTraversalAfter="@+id/txtcorreo2"
-            android:ems="10"
-            android:hint="Apellido Paterno"
-            android:inputType="textEmailAddress"
-            android:maxLength="50"
-
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/txtapellidoMaterno"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtpassword"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:accessibilityTraversalAfter="@+id/txtcorreo2"
-            android:ems="10"
-            android:hint="Apellido Materno"
-            android:inputType="textEmailAddress"
-            android:maxLength="50"
-
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/txtdniUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtnombre"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-
-            android:ems="10"
-            android:hint="Dni"
-            android:inputType="phone"
-            android:maxLength="9"
-
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/txtcorreoUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView3"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-
-            android:ems="10"
-            android:hint="Correo"
-            android:inputType="textPersonName"
-            android:maxLength="50"
-
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/txtpassUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:accessibilityLiveRegion="@android:integer/status_bar_notification_info_maxnum"
-            android:duplicateParentState="true"
-            android:ems="10"
-            android:hint="Contraseña"
-            android:inputType="numberPassword"
-            android:maxLength="4"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/txtPredioUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtpassword"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:accessibilityTraversalAfter="@+id/txtcorreo2"
-            android:ems="10"
-            android:hint="Predio"
-            android:inputType="textEmailAddress"
-            android:maxLength="50"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btnRegistrar3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/checkBox"
-            android:layout_alignParentBottom="true"
-            android:layout_alignRight="@+id/checkBox"
-            android:layout_marginBottom="17dp"
-            android:text="REGISTRAR"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
     </ScrollView>
 </LinearLayout>

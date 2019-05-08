@@ -63,7 +63,7 @@ public class Registrar extends AppCompatActivity {
                                     txtapellidoPaterno.getText().toString(),
                                     txtapellidoMaterno.getText().toString(),
                                     txtPredioUusario.getText().toString()
-                                    );
+                            );
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {

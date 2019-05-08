@@ -1,4 +1,4 @@
-package agrosindeforestacion.com.agrosindeforestacion.Menu;
+package agrosindeforestacion.com.agrosindeforestacion;
 
 import android.Manifest;
 import android.content.Context;
