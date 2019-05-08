@@ -26,7 +26,7 @@ public class MenuPrincipal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
-        toolbar = (Toolbar) findViewById(R.id.toolbar1);
+
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation_bottom);
         bottomNavigationView.getMenu().getItem(1).setChecked(true);
         changeFragment(new MapasFragment());
