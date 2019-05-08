@@ -3,13 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/toolbar2"
+    android:id="@+id/toolbar0"
     android:background="@color/colorGreen"
     android:layout_width="match_parent"
-
+    app:title="PRIMERO"
     android:layout_height="?actionBarSize"
     app:titleTextColor="@android:color/white" >
 
 
 </android.support.v7.widget.Toolbar>
-

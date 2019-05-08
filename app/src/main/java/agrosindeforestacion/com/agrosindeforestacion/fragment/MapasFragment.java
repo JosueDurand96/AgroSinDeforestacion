@@ -12,8 +12,12 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -55,9 +59,23 @@ public class MapasFragment extends Fragment implements OnMapReadyCallback {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         Context context = inflater.getContext();
-        return inflater.inflate(R.layout.fragment_about, container, false);
-    }
+        View view = inflater.inflate(R.layout.fragment_about, container, false);
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar2);
 
+        //for crate home button
+        AppCompatActivity activity = (AppCompatActivity) getActivity();
+        activity.setSupportActionBar(toolbar);
+      //  activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        return view;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case android.R.id.home:
+                getActivity().onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
+    }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -67,6 +85,9 @@ public class MapasFragment extends Fragment implements OnMapReadyCallback {
 
 
     }
+
+
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {

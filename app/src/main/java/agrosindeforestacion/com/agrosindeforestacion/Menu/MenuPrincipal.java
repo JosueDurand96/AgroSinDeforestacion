@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 import agrosindeforestacion.com.agrosindeforestacion.Inicio.MainActivity;
@@ -49,6 +50,10 @@ public class MenuPrincipal extends AppCompatActivity {
     }
 
 
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return true;
+    }
 
     private void changeFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction()
