@@ -7,11 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.android.gms.maps.GoogleMap;
-
 import agrosindeforestacion.com.agrosindeforestacion.R;
-
-
 
 public class SincronizarFragment extends Fragment {
 

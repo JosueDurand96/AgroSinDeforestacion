@@ -5,21 +5,19 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-
-import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
-
-
 import agrosindeforestacion.com.agrosindeforestacion.Inicio.MainActivity;
 import agrosindeforestacion.com.agrosindeforestacion.R;
 import agrosindeforestacion.com.agrosindeforestacion.fragment.MapasFragment;
 import agrosindeforestacion.com.agrosindeforestacion.fragment.HomeFragment;
 import agrosindeforestacion.com.agrosindeforestacion.fragment.SincronizarFragment;
 
+import android.support.v7.widget.Toolbar;
 public class MenuPrincipal extends AppCompatActivity {
     Toolbar toolbar;
     BottomNavigationView bottomNavigationView;
@@ -28,7 +26,7 @@ public class MenuPrincipal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
-        toolbar = (Toolbar) findViewById(R.id.toolbar1);
+
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation_bottom);
         bottomNavigationView.getMenu().getItem(1).setChecked(true);
         changeFragment(new MapasFragment());
@@ -48,22 +46,11 @@ public class MenuPrincipal extends AppCompatActivity {
                 return true;
             }
         });
-
-
-    }
-    private void changeFragment(SincronizarFragment fragment) {
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.contentFragment, fragment)
-                .commit();
-    }
-    private void changeFragment(HomeFragment fragment) {
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.contentFragment, fragment)
-                .commit();
     }
 
 
-    private void changeFragment(MapasFragment fragment) {
+
+    private void changeFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.contentFragment, fragment)
                 .commit();

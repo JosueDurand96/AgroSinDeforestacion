@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import agrosindeforestacion.com.agrosindeforestacion.Menu.MenuPrincipal;
 import agrosindeforestacion.com.agrosindeforestacion.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable(){
             public void run(){
                 // Cuando pasen los 3 segundos, pasamos a la actividad principal de la aplicación
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                Intent intent = new Intent(MainActivity.this, MenuPrincipal.class);
                 startActivity(intent);
                 finish();
             }
