@@ -25,9 +25,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-
+import agrosindeforestacion.com.agrosindeforestacion.Menu.MapsActivity;
 import agrosindeforestacion.com.agrosindeforestacion.Menu.MenuPrincipal;
 import agrosindeforestacion.com.agrosindeforestacion.R;
+import agrosindeforestacion.com.agrosindeforestacion.fragment.MapasFragment;
 import agrosindeforestacion.com.agrosindeforestacion.model.nthc_persona;
 
 
@@ -128,8 +129,8 @@ public class SessionFragment extends Fragment implements Response.Listener<JSONO
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        Intent i = new Intent(getContext(),MenuPrincipal.class);
-        i.putExtra(id,usuario.getId_nthc_persona() );
+        Intent i = new Intent(getContext(),MapsActivity.class);
+      //  i.putExtra(id,usuario.getId_nthc_persona() );
         startActivity(i);
 
     }
